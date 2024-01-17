@@ -144,7 +144,7 @@ STATIC_ROOT = '/app/Netflix-Clone-Myflix/netclone/Myflix/Myflixproject/static/as
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/app/Netflix-Clone-Myflix/netclone/Myflix/Myflixproject/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
