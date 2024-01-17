@@ -28,7 +28,7 @@ ENV PYTHONPATH="/app/Netflix-Clone-Myflix/netclone/Myflix"
 ENV DJANGO_SETTINGS_MODULE="Myflixproject.settings"
 
 # Set the STATIC_ROOT
-ENV STATIC_ROOT="/app/static/"
+ENV STATIC_ROOT="/app/Netflix-Clone-Myflix/netclone/Myflix/Myflixproject/static/assets/"
 
 # Combine migrations, collect static files, and CMD in a single RUN instruction
 RUN python manage.py migrate && \
