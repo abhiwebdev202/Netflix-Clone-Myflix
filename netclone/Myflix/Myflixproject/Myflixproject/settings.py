@@ -139,7 +139,7 @@ AUTHENTICATION_BACKENDS = [
 AUTH_USER_MODEL = 'myflixapp.CustomUser'
 
 STATIC_URL = 'static/'
-STATIC_ROOT = '/app/static/'
+STATIC_ROOT = '/app/Netflix-Clone-Myflix/netclone/Myflix/Myflixproject/static/assets/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
