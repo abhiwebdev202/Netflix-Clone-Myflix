@@ -91,7 +91,7 @@ class PlayMovie(View):
                 return HttpResponseNotFound("Video not found")
 
             # Retrieve the video URL
-            video_url = movie.video.url
+            video_url = movie.video.values()
 
             context = {
                 'video_url': video_url,
