@@ -92,4 +92,4 @@ class PlayMovie(View):
 
             return render(request, 'playmovie.html', context)
         except Movie.DoesNotExist:
-            return redirect('netflixapp:profile-list')
+            return redirect('myflixapp:profile-list')
