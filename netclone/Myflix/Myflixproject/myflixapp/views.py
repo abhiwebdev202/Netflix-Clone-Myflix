@@ -1,4 +1,5 @@
 import imp
+from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth.decorators import login_required
@@ -84,10 +85,16 @@ class PlayMovie(View):
     def get(self, request, movie_id, *args, **kwargs):
         try:
             movie = Movie.objects.get(uuid=movie_id)
-            movie = movie.video.values()
             
+            # Check if the movie has a video file
+            if not movie.video:
+                return HttpResponseNotFound("Video not found")
+
+            # Retrieve the video URL
+            video_url = movie.video.url
+
             context = {
-                'movie':list(movie)
+                'video_url': video_url,
             }
 
             return render(request, 'playmovie.html', context)
