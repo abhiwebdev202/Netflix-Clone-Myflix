@@ -21,8 +21,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
+# Set the PYTHONPATH to include the directory containing your Django project
+ENV PYTHONPATH="/app/Netflix-Clone-Myflix/netclone/Myflix"
+
 # Define environment variable
 ENV DJANGO_SETTINGS_MODULE="Myflixproject.settings"
+
+# Set the STATIC_ROOT
+ENV STATIC_ROOT="/app/static/"
 
 # Combine migrations, collect static files, and CMD in a single RUN instruction
 RUN python manage.py migrate && \
