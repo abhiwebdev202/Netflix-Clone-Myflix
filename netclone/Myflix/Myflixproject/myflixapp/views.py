@@ -85,16 +85,10 @@ class PlayMovie(View):
     def get(self, request, movie_id, *args, **kwargs):
         try:
             movie = Movie.objects.get(uuid=movie_id)
+            movie = movie.video.values()
             
-            # Check if the movie has a video file
-            if not movie.video:
-                return HttpResponseNotFound("Video not found")
-
-            # Retrieve the video URL
-            video_url = movie.video.values()
-
             context = {
-                'video_url': video_url,
+                'movie':list(movie)
             }
 
             return render(request, 'playmovie.html', context)
