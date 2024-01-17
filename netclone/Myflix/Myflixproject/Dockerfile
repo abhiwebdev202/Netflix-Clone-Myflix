@@ -22,7 +22,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 
 # Define environment variable
-ENV DJANGO_SETTINGS_MODULE="/app/Netflix-Clone-Myflix/netclone/Myflix/Myflixproject/Myflixproject/settings.py"
+ENV DJANGO_SETTINGS_MODULE="Myflixproject.settings"
 
 # Combine migrations, collect static files, and CMD in a single RUN instruction
 RUN python manage.py migrate && \
