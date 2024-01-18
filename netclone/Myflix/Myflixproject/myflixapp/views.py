@@ -10,7 +10,7 @@ from . models import Profile, Movie
 class Home(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('myflixapp: profile-list')
+            return redirect('myflixapp:profile-list')
         return render(request, 'index.html')
 
 #class ProfileView(View):
