@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+    <!--
     <main class='bg-primary_black h-full w-full '>
         {{movie|json_script:'movie_data'}}
         <video  controls class="w-full h-screen player"></video>
@@ -14,4 +15,13 @@
         const video_param = parseInt(url.searchParams.get('epi'))?parseInt(url.searchParams.get('epi')):0
         videoEl.setAttribute('src', `http://localhost:8000/media/${movie_data[video_param].file}`)
     </script>
+-->
+    <main class='bg-primary_black h-full w-full'>
+        {% for video in videos %}
+        <video controls class="w-full h-screen player">
+            <source src="{{ video.file.url }}" type="{{ video.file.content_type }}">
+            Your browser does not support the video tag.
+        </video>
+    {% endfor %}
+</main>
 {% endblock content %}
